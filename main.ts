@@ -1,30 +1,32 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    NgadiniPlayer,
-    assets.animation`NgadiniWalk`,
-    100,
-    true
-    )
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_a_pressed() {
+    animation.runImageAnimation(NgadiniPlayer, assets.animation`
+            NgadiniWalk
+        `, 100, true)
     scene.followPath(NgadiniPlayer, path, 100)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_on_overlap(sprite: Sprite, otherSprite: Sprite) {
     if (NovitaNPC.overlapsWith(NgadiniPlayer)) {
         animation.stopAnimation(animation.AnimationTypes.All, NgadiniPlayer)
-        animation.runImageAnimation(
-        NovitaNPC,
-        assets.animation`NovitaFound`,
-        100,
-        true
-        )
+        animation.runImageAnimation(NovitaNPC, assets.animation`
+                NovitaFound
+            `, 100, true)
         NovitaNPC.sayText("You Got Me!", 200, false)
     }
+    
 })
-let path: tiles.Location[] = []
-let NovitaNPC: Sprite = null
-let NgadiniPlayer: Sprite = null
-tiles.setCurrentTilemap(tilemap`level1`)
-NgadiniPlayer = sprites.create(assets.image`Ngadini`, SpriteKind.Player)
-NovitaNPC = sprites.create(assets.image`Novita`, SpriteKind.Food)
+let path : tiles.Location[] = []
+let NovitaNPC : Sprite = null
+let NgadiniPlayer : Sprite = null
+tiles.setCurrentTilemap(tilemap`
+    level1
+`)
+scene.setBackgroundColor(7)
+NgadiniPlayer = sprites.create(assets.image`
+    Ngadini
+`, SpriteKind.Player)
+NovitaNPC = sprites.create(assets.image`
+    Novita
+`, SpriteKind.Food)
 tiles.placeOnRandomTile(NgadiniPlayer, sprites.dungeon.collectibleInsignia)
 tiles.placeOnRandomTile(NovitaNPC, sprites.dungeon.chestClosed)
 scene.cameraFollowSprite(NgadiniPlayer)

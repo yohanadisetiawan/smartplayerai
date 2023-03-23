@@ -26,6 +26,7 @@ NgadiniPlayer: Sprite = None
 tiles.set_current_tilemap(tilemap("""
     level1
 """))
+scene.set_background_color(7)
 NgadiniPlayer = sprites.create(assets.image("""
     Ngadini
 """), SpriteKind.player)
