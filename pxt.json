@@ -4,7 +4,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "arcade-tilemap-a-star": "github:jwunderl/arcade-tilemap-a-star#v0.4.0"
+        "arcade-tilemap-a-star": "github:jwunderl/arcade-tilemap-a-star#v0.4.0",
+        "pxt-rtttl": "github:pelikhan/pxt-rtttl#v0.0.12"
     },
     "files": [
         "main.blocks",

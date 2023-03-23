@@ -40,3 +40,6 @@ NgadiniLocation = NgadiniPlayer.tilemap_location()
 NovitaLocation = NovitaNPC.tilemap_location()
 path = scene.a_star(tiles.get_tile_location(NgadiniLocation.column, NgadiniLocation.row),
     tiles.get_tile_location(NovitaLocation.column, NovitaLocation.row))
+music.play(music.string_playable(music.convert_rtttl_to_melody("LeisureSuit:d=4,o=6,b=224:f.5,f#.5,g.5,g#5,8a#5,f5,g#.5,a#.5,8f5,g#5,8a#5,g#5,2c#.,a#5,8c#,a5,a#.5,c#.,8a5,a#5,8c#,d#,2e,c#.,f.,f.,f.,f.,f,8e,d#,2d,a#.5,e,8f,e,8f,c#,d#.,c#"),
+        120),
+    music.PlaybackMode.LOOPING_IN_BACKGROUND)
