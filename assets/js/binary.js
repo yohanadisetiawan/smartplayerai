@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.26/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.2","target":"arcade","targetVersion":"1.12.26","repo":"yohanadisetiawan/smartplayerai"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.26/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.3","target":"arcade","targetVersion":"1.12.26","repo":"yohanadisetiawan/smartplayerai"}
 // total=1899599 new=5.33% cached=89.75% other=4.92%
 (function (ectx) {
 'use strict';
@@ -541,7 +541,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P132900(s) {
+function _main___P132977(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1135,13 +1135,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P132900.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/arcade-tilemap-a-star/main.ts","functionName":"<main>","argumentNames":[]}
-_main___P132900.continuations = [  ]
+_main___P132977.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/arcade-tilemap-a-star/main.ts","functionName":"<main>","argumentNames":[]}
+_main___P132977.continuations = [  ]
 
-function _main___P132900_mk(s) {
+function _main___P132977_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P132900, depth: s.depth + 1,
+        parent: s, fn: _main___P132977, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -64163,5 +64163,5 @@ const music_MelodyPlayer__C100207_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["transparency16___102916","NgadiniPlayer___132778","path___132785","NovitaNPC___132794","NgadiniLocation___132837","NovitaLocation___132841"])
 
-return _main___P132900
+return _main___P132977
 })
