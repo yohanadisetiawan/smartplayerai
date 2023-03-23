@@ -17,10 +17,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_on_overlap(spr
 let path : tiles.Location[] = []
 let NovitaNPC : Sprite = null
 let NgadiniPlayer : Sprite = null
+scene.setBackgroundColor(7)
+game.setDialogFrame(assets.image`
+    DialogFrame
+`)
+game.showLongText("Smart Player AI\\nMovement Auto Player to NPC using A Star Algorithm\\nPress Button A to start\\nBy Yohan\\nSurel:\\nyohanadisetiawan@gmail.com", DialogLayout.Center)
 tiles.setCurrentTilemap(tilemap`
     level1
 `)
-scene.setBackgroundColor(7)
 NgadiniPlayer = sprites.create(assets.image`
     Ngadini
 `, SpriteKind.Player)

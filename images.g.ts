@@ -41,6 +41,33 @@ f b b f f f e e e e f f f b b f
 . . . f f 1 d 1 d 1 d f f . . . 
 . . . . . f f b b f f . . . . . 
 `;
+            case "image3":
+            case "DialogFrame":return img`
+..bbbbbbbbbbbbbbbbbbbb..
+.b11bb11bb11bb11bb11bbb.
+bbb11bb11bb11bb11bb11b1b
+bb1bbbbbbbbbbbbbbbbbb11b
+b11bb11111111111111bb1bb
+b1bb1111111111111111bbbb
+bbbb1111111111111111bb1b
+bb1b1111111111111111b11b
+b11b1111111111111111b1bb
+b1bb1111111111111111bbbb
+bbbb1111111111111111bb1b
+bb1b1111111111111111b11b
+b11b1111111111111111b1bb
+b1bb1111111111111111bbbb
+bbbb1111111111111111bb1b
+bb1b1111111111111111b11b
+b11b1111111111111111b1bb
+b1bb1111111111111111bbbb
+bbbb1111111111111111bb1b
+bb1bb11111111111111bb11b
+b11bbbbbbbbbbbbbbbbbb1bb
+b1b11bb11bb11bb11bb11bbb
+.bbb11bb11bb11bb11bb11b.
+..bbbbbbbbbbbbbbbbbbbb..
+`;
         }
         return null;
     })

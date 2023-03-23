@@ -23,10 +23,15 @@ sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_on_overlap)
 path: List[tiles.Location] = []
 NovitaNPC: Sprite = None
 NgadiniPlayer: Sprite = None
+scene.set_background_color(7)
+game.set_dialog_frame(assets.image("""
+    DialogFrame
+"""))
+game.show_long_text("Smart Player AI\\nMovement Auto Player to NPC using A Star Algorithm\\nPress Button A to start\\nBy Yohan\\nSurel:\\nyohanadisetiawan@gmail.com",
+    DialogLayout.CENTER)
 tiles.set_current_tilemap(tilemap("""
     level1
 """))
-scene.set_background_color(7)
 NgadiniPlayer = sprites.create(assets.image("""
     Ngadini
 """), SpriteKind.player)

@@ -9,6 +9,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Novita"
     },
+    "image3": {
+        "data": "hwQYABgAAAAAu7u7u7u7u7u7uwCwuxG7EbsRuxG7EQsbG7EbsRuxG7Ebsbsbsbu7u7u7u7u7G7u7sRsRERERERGxG7G7uxERERERERERu7EbuxERERERERERu7sbsRERERERERERG7u7sRERERERERERG7G7uxERERERERERu7EbuxERERERERERu7sbsRERERERERERG7u7sRERERERERERG7G7uxERERERERERu7EbuxERERERERERu7sbsRERERERERERG7u7sRERERERERERG7G7uxERERERERERu7EbuxERERERERERu7sbsRsRERERERGxG7u7sbu7u7u7u7u7G7G7G7EbsRuxG7EbsbGwEbsRuxG7EbsRuwsAu7u7u7u7u7u7uwA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "DialogFrame"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",
