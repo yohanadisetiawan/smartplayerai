@@ -9,7 +9,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     if (NovitaNPC.overlapsWith(NgadiniPlayer)) {
-        NovitaNPC.sayText("You Got Me!", 100, false)
+        animation.stopAnimation(animation.AnimationTypes.All, NgadiniPlayer)
+        animation.runImageAnimation(
+        NovitaNPC,
+        assets.animation`NovitaFound`,
+        100,
+        true
+        )
+        NovitaNPC.sayText("You Got Me!", 200, false)
     }
 })
 let path: tiles.Location[] = []

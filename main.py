@@ -10,7 +10,14 @@ controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
 
 def on_on_overlap(sprite, otherSprite):
     if NovitaNPC.overlaps_with(NgadiniPlayer):
-        NovitaNPC.say_text("You Got Me!", 100, False)
+        animation.stop_animation(animation.AnimationTypes.ALL, NgadiniPlayer)
+        animation.run_image_animation(NovitaNPC,
+            assets.animation("""
+                NovitaFound
+            """),
+            100,
+            True)
+        NovitaNPC.say_text("You Got Me!", 200, False)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_on_overlap)
 
 path: List[tiles.Location] = []
