@@ -17,7 +17,8 @@
         "images.g.jres",
         "images.g.ts",
         "main.py",
-        "tutorial-info-cache.json"
+        "tutorial-info-cache.json",
+        "stack.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -29,5 +30,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "blocksprj"
 }

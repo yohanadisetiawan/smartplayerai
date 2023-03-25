@@ -5,10 +5,12 @@ def on_a_pressed():
         """),
         100,
         True)
+    calculateDistenation()
     scene.follow_path(NgadiniPlayer, path, 100)
 controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
 
 def on_on_overlap(sprite, otherSprite):
+    global NovitaNPC
     if NovitaNPC.overlaps_with(NgadiniPlayer):
         animation.stop_animation(animation.AnimationTypes.ALL, NgadiniPlayer)
         animation.run_image_animation(NovitaNPC,
@@ -18,8 +20,25 @@ def on_on_overlap(sprite, otherSprite):
             100,
             True)
         NovitaNPC.say_text("You Got Me!", 200, False)
+        pause(1000)
+        sprites.destroy(NovitaNPC, effects.fountain, 500)
+        pause(100)
+        NgadiniPlayer.say_text("Press A to next Journey.", 200, False)
+        pause(2000)
+        NovitaNPC = sprites.create(assets.image("""
+            Novita
+        """), SpriteKind.food)
+        tiles.place_on_random_tile(NovitaNPC, sprites.dungeon.chest_closed)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_on_overlap)
 
+def calculateDistenation():
+    global NgadiniLocation, NovitaLocation, path
+    NgadiniLocation = NgadiniPlayer.tilemap_location()
+    NovitaLocation = NovitaNPC.tilemap_location()
+    path = scene.a_star(tiles.get_tile_location(NgadiniLocation.column, NgadiniLocation.row),
+        tiles.get_tile_location(NovitaLocation.column, NovitaLocation.row))
+NovitaLocation: tiles.Location = None
+NgadiniLocation: tiles.Location = None
 path: List[tiles.Location] = []
 NovitaNPC: Sprite = None
 NgadiniPlayer: Sprite = None
@@ -42,10 +61,6 @@ tiles.place_on_random_tile(NgadiniPlayer, sprites.dungeon.collectible_insignia)
 tiles.place_on_random_tile(NovitaNPC, sprites.dungeon.chest_closed)
 scene.camera_follow_sprite(NgadiniPlayer)
 controller.move_sprite(NgadiniPlayer)
-NgadiniLocation = NgadiniPlayer.tilemap_location()
-NovitaLocation = NovitaNPC.tilemap_location()
-path = scene.a_star(tiles.get_tile_location(NgadiniLocation.column, NgadiniLocation.row),
-    tiles.get_tile_location(NovitaLocation.column, NovitaLocation.row))
 music.play(music.string_playable(music.convert_rtttl_to_melody("LeisureSuit:d=4,o=6,b=224:f.5,f#.5,g.5,g#5,8a#5,f5,g#.5,a#.5,8f5,g#5,8a#5,g#5,2c#.,a#5,8c#,a5,a#.5,c#.,8a5,a#5,8c#,d#,2e,c#.,f.,f.,f.,f.,f,8e,d#,2d,a#.5,e,8f,e,8f,c#,d#.,c#"),
         120),
     music.PlaybackMode.LOOPING_IN_BACKGROUND)
